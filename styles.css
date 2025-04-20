@@ -1,0 +1,695 @@
+/* Netflix Clone CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Header Styles */
+header {
+    position: relative;
+    height: 700px;
+    border-bottom: 8px solid #222;
+    overflow: hidden;
+}
+
+/* Static Background Banner Style */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/c31c3123-3df7-4359-8b8c-475bd2d9925d/15feb590-3d73-45e9-9e4a-2eb334c83921/IN-en-20231225-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+/* Ensure hero content is above the sliding background */
+.navbar-container {
+    position: relative;
+    z-index: 3; /* Higher z-index to stay above background */
+    background: rgba(10, 10, 15, 0.6); /* Dark transparent background */
+    backdrop-filter: blur(10px); /* Glassy effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border */
+    transition: all 0.3s ease;
+}
+
+.navbar-container.scrolled {
+    background: rgba(10, 10, 15, 0.8); /* Darker when scrolled */
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.logo img {
+    height: 45px;
+    width: 167px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.language-picker select {
+    background-color: transparent;
+    color: white;
+    padding: 7px 10px;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    margin-right: 20px;
+}
+
+.sign-in-btn {
+    background-color: #e50914;
+    color: white;
+    padding: 7px 17px;
+    border-radius: 3px;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.hero {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: calc(100% - 90px);
+}
+
+.hero-content {
+    max-width: 950px;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.125rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 1.625rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.hero h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.email-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.email-form input {
+    padding: 20px;
+    width: 450px;
+    height: 60px;
+    font-size: 16px;
+    border: none;
+    border-radius: 2px 0 0 2px;
+}
+
+.email-form button {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    font-size: 1.625rem;
+    font-weight: 500;
+    padding: 0 26px;
+    cursor: pointer;
+    border-radius: 0 2px 2px 0;
+    display: flex;
+    align-items: center;
+}
+
+.email-form button i {
+    margin-left: 10px;
+}
+
+/* Features Section */
+.features {
+    padding: 50px 0;
+}
+
+.feature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 45px;
+    margin: 0 auto;
+    max-width: 1200px;
+    border-bottom: 8px solid #222;
+}
+
+.feature-text {
+    width: 48%;
+    padding: 0 0 0 20px;
+}
+
+.feature-img {
+    width: 48%;
+}
+
+.feature-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.feature-text p {
+    font-size: 1.5rem;
+}
+
+.feature img {
+    width: 100%;
+}
+
+.feature:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Plans Section */
+.plans-section {
+    padding: 70px 45px;
+    text-align: center;
+    border-bottom: 8px solid #222;
+}
+
+.plans-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.plans {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.plan {
+    background-color: rgba(45, 45, 45, 0.4);
+    padding: 30px 20px;
+    border-radius: 5px;
+    width: 24%;
+    position: relative;
+}
+
+.plan h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.plan .quality {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.plan .description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    min-height: 80px;
+}
+
+.plan .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.plan.basic {
+    background-color: rgba(229, 9, 20, 0.3);
+}
+
+.plan .popular {
+    position: absolute;
+    background-color: #e50914;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    top: 10px;
+    right: 10px;
+    border-radius: 15px;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 70px 45px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 8px solid #222;
+}
+
+.faq-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.accordion {
+    background-color: #303030;
+    color: #fff;
+    cursor: pointer;
+    padding: 20px 30px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    margin-bottom: 1px;
+    position: relative;
+    transition: 0.4s;
+}
+
+.accordion:after {
+    content: '\002B';
+    font-weight: bold;
+    float: right;
+    font-size: 2rem;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    background-color: #303030;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.panel p {
+    padding: 20px 30px;
+    font-size: 1.25rem;
+}
+
+.email-form-bottom {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.email-form-bottom h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/* Trending Section */
+.trending {
+    padding: 70px 45px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 8px solid #222;
+}
+
+.trending h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.trending-shows {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.show {
+    min-width: 220px;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.show-card {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.show-card img {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.show-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.show-card:hover {
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.show-card:hover img {
+    filter: brightness(80%);
+}
+
+.show-card:hover .show-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.show-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+}
+
+.show-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+}
+
+.show-details span {
+    margin-right: 10px;
+}
+
+.show-details .match {
+    color: #46d369;
+    font-weight: bold;
+}
+
+.show-details .year {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 0 4px;
+}
+
+.show-details .maturity {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 0 4px;
+}
+
+.show-info p {
+    font-size: 0.9rem;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Add a "Play" button on hover */
+.show-card::after {
+    content: '\f04b';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-card:hover::after {
+    opacity: 1;
+}
+
+/* AI Assistant Chat Icon */
+.ai-assistant {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #e50914;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.ai-assistant:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.ai-assistant i {
+    color: white;
+    font-size: 24px;
+}
+
+/* Tooltip for AI Assistant - don't change position to relative */
+.ai-assistant::before {
+    content: "AI Assistant";
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.ai-assistant::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 25px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Animation for AI icon */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.ai-assistant:active i {
+    animation: pulse 0.3s ease-in-out;
+}
+
+/* Footer */
+footer {
+    padding: 70px 45px;
+    color: #757575;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-content a {
+    color: #757575;
+}
+
+.footer-content p {
+    margin-bottom: 30px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 12px;
+    margin-bottom: 40px;
+}
+
+.footer-col a {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.language-picker-footer select {
+    background-color: #000;
+    color: #757575;
+    padding: 12px;
+    border: 1px solid #333;
+    margin-bottom: 20px;
+}
+
+.footer-country {
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 950px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .feature {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .feature:nth-child(even) {
+        flex-direction: column;
+    }
+    
+    .feature-text, .feature-img {
+        width: 100%;
+    }
+    
+    .feature-text {
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    
+    .plans {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .plan {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    
+    .footer-col {
+        width: 50%;
+    }
+    
+    .email-form {
+        flex-direction: column;
+    }
+    
+    .email-form input {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 2px;
+    }
+    
+    .email-form button {
+        width: 200px;
+        margin: 0 auto;
+        border-radius: 2px;
+        height: 50px;
+        font-size: 1rem;
+    }
+
+    .show {
+        min-width: 180px;
+    }
+    
+    .show-card:hover {
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 550px) {
+    .navbar {
+        padding: 20px;
+    }
+    
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+    
+    .hero h2, .feature-text h2 {
+        font-size: 1.125rem;
+    }
+    
+    .feature-text p {
+        font-size: 1.1rem;
+    }
+    
+    .footer-col {
+        width: 100%;
+    }
+
+    .show {
+        min-width: 140px;
+    }
+    
+    .show-info h3 {
+        font-size: 0.9rem;
+    }
+    
+    .show-details {
+        font-size: 0.7rem;
+    }
+    
+    .show-info p {
+        font-size: 0.8rem;
+        -webkit-line-clamp: 2;
+    }
+}
